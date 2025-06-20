@@ -11,20 +11,27 @@
       background: #f9f9f9;
       color: #222;
       line-height: 1.6;
+      overflow-x: hidden;
     }
     header {
       background: #222;
       color: #fff;
       padding: 2rem 0;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
     }
     main {
       max-width: 800px;
       margin: 2rem auto;
       padding: 0 1rem;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: none;
+      box-shadow: none;
+      border-radius: 0;
+      margin: 0;
+      padding: 0;
+      max-width: none;
     }
     section {
       margin-bottom: 2rem;
@@ -46,10 +53,85 @@
       color: #005fa3;
       text-decoration: underline;
     }
-    @media (max-width: 600px) {
-      main {
-        padding: 0 0.5rem;
+    .parallax-section {
+      position: relative;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f9f9f9;
+      overflow: hidden;
+      margin-bottom: 0;
+      padding: 4rem 0;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      max-width: 900px;
+      position: relative;
+      z-index: 1;
+    }
+    .text-card, .image-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      padding: 2rem;
+      min-width: 260px;
+      max-width: 340px;
+      margin: 1rem 0;
+      transition: box-shadow 0.2s;
+      position: relative;
+      z-index: 2;
+    }
+    .text-card {
+      flex: 1 1 320px;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .image-card {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+      min-width: 180px;
+      max-width: 220px;
+      overflow: hidden;
+    }
+    .image-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+    @media (max-width: 900px) {
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
       }
+      .text-card, .image-card {
+        max-width: 95vw;
+      }
+    }
+    /* Parallax effect: will be set by JS */
+    .parallax {
+      will-change: transform;
+      transition: transform 0.1s;
+    }
+    /* Section backgrounds for separation */
+    .parallax-section:nth-child(odd) {
+      background: #f0f4f8;
+    }
+    .parallax-section:nth-child(even) {
+      background: #e8eaf6;
     }
   </style>
 </head>
@@ -59,42 +141,99 @@
     <p>Web Development Student & Portfolio</p>
   </header>
   <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        <!-- Write a short introduction about yourself here. -->
-        Hi! I'm a web development student passionate about building creative and useful web applications.
-      </p>
+    <section class="parallax-section" id="about">
+      <div class="card-container">
+        <div class="text-card parallax" data-speed="0.3">
+          <h2>About Me</h2>
+          <p>
+            Hi! I'm a web development student passionate about building creative and useful web applications.
+          </p>
+        </div>
+        <div class="image-card parallax" data-speed="0.15">
+          <img src="https://placehold.co/220x180?text=About+1" alt="About placeholder 1">
+        </div>
+        <div class="image-card parallax" data-speed="0.22">
+          <img src="https://placehold.co/220x180?text=About+2" alt="About placeholder 2">
+        </div>
+      </div>
     </section>
-    <section id="interests">
-      <h2>Interests</h2>
-      <ul>
-        <li>Front-end Development</li>
-        <li>UI/UX Design</li>
-        <li>Learning new technologies</li>
-        <!-- Add more interests as you like -->
-      </ul>
+    <section class="parallax-section" id="interests">
+      <div class="card-container">
+        <div class="text-card parallax" data-speed="0.25">
+          <h2>Interests</h2>
+          <ul>
+            <li>Front-end Development</li>
+            <li>UI/UX Design</li>
+            <li>Learning new technologies</li>
+          </ul>
+        </div>
+        <div class="image-card parallax" data-speed="0.12">
+          <img src="https://placehold.co/220x180?text=Interest+1" alt="Interest placeholder 1">
+        </div>
+        <div class="image-card parallax" data-speed="0.18">
+          <img src="https://placehold.co/220x180?text=Interest+2" alt="Interest placeholder 2">
+        </div>
+      </div>
     </section>
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li>
-          <strong>Project Title 1</strong> – Short description of your project.
-        </li>
-        <li>
-          <strong>Project Title 2</strong> – Short description of your project.
-        </li>
-        <!-- Add more projects as you build them -->
-      </ul>
+    <section class="parallax-section" id="projects">
+      <div class="card-container">
+        <div class="text-card parallax" data-speed="0.2">
+          <h2>Projects</h2>
+          <ul>
+            <li>
+              <strong>Project Title 1</strong> – Short description of your project.
+            </li>
+            <li>
+              <strong>Project Title 2</strong> – Short description of your project.
+            </li>
+          </ul>
+        </div>
+        <div class="image-card parallax" data-speed="0.1">
+          <img src="https://placehold.co/220x180?text=Project+1" alt="Project placeholder 1">
+        </div>
+        <div class="image-card parallax" data-speed="0.16">
+          <img src="https://placehold.co/220x180?text=Project+2" alt="Project placeholder 2">
+        </div>
+      </div>
     </section>
-    <section id="links">
-      <h2>Links</h2>
-      <div class="links">
-        <a href="#" target="_blank">GitHub</a>
-        <a href="#" target="_blank">LinkedIn</a>
-        <!-- Add more links as needed -->
+    <section class="parallax-section" id="links">
+      <div class="card-container">
+        <div class="text-card parallax" data-speed="0.18">
+          <h2>Links</h2>
+          <div class="links">
+            <a href="#" target="_blank">GitHub</a>
+            <a href="#" target="_blank">LinkedIn</a>
+          </div>
+        </div>
+        <div class="image-card parallax" data-speed="0.09">
+          <img src="https://placehold.co/220x180?text=Links+1" alt="Links placeholder 1">
+        </div>
+        <div class="image-card parallax" data-speed="0.13">
+          <img src="https://placehold.co/220x180?text=Links+2" alt="Links placeholder 2">
+        </div>
       </div>
     </section>
   </main>
+  <script>
+    // Simple parallax effect for cards
+    function parallaxScroll() {
+      const parallaxEls = document.querySelectorAll('.parallax');
+      const scrollY = window.scrollY || window.pageYOffset;
+      parallaxEls.forEach(el => {
+        const speed = parseFloat(el.dataset.speed) || 0.1;
+        // Find section's top relative to viewport
+        const section = el.closest('.parallax-section');
+        if (!section) return;
+        const rect = section.getBoundingClientRect();
+        const offset = rect.top + window.scrollY;
+        // Move card vertically based on scroll position and speed
+        const y = (scrollY - offset) * speed;
+        el.style.transform = `translateY(${y}px)`;
+      });
+    }
+    window.addEventListener('scroll', parallaxScroll);
+    window.addEventListener('resize', parallaxScroll);
+    window.addEventListener('DOMContentLoaded', parallaxScroll);
+  </script>
 </body>
 </html>
