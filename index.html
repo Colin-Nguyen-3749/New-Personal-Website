@@ -18,9 +18,6 @@
       color: #fff;
       padding: 2rem 0;
       text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
     }
     main {
       max-width: 800px;
@@ -103,6 +100,8 @@
       min-width: 180px;
       max-width: 220px;
       overflow: hidden;
+      position: relative;
+      z-index: 1;
     }
     .image-card img {
       width: 100%;
@@ -110,6 +109,31 @@
       object-fit: cover;
       border-radius: 12px;
       display: block;
+    }
+    /* Overlap some image cards */
+    .image-card.overlap-left {
+      margin-left: -60px;
+      z-index: 3;
+    }
+    .image-card.overlap-right {
+      margin-right: -60px;
+      z-index: 3;
+    }
+    .image-card.overlap-top {
+      margin-top: -40px;
+      z-index: 4;
+    }
+    .image-card.overlap-bottom {
+      margin-bottom: -40px;
+      z-index: 2;
+    }
+    .image-card.overlap-far-left {
+      margin-left: -100px;
+      z-index: 2;
+    }
+    .image-card.overlap-far-right {
+      margin-right: -100px;
+      z-index: 2;
     }
     @media (max-width: 900px) {
       .card-container {
@@ -119,6 +143,10 @@
       }
       .text-card, .image-card {
         max-width: 95vw;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
       }
     }
     /* Parallax effect: will be set by JS */
@@ -149,11 +177,20 @@
             Hi! I'm a web development student passionate about building creative and useful web applications.
           </p>
         </div>
-        <div class="image-card parallax" data-speed="0.15">
+        <div class="image-card parallax" data-speed="0.5">
           <img src="https://placehold.co/220x180?text=About+1" alt="About placeholder 1">
         </div>
-        <div class="image-card parallax" data-speed="0.22">
+        <div class="image-card parallax overlap-left" data-speed="0.7">
           <img src="https://placehold.co/220x180?text=About+2" alt="About placeholder 2">
+        </div>
+        <div class="image-card parallax overlap-right" data-speed="0.9">
+          <img src="https://placehold.co/220x180?text=About+3" alt="About placeholder 3">
+        </div>
+        <div class="image-card parallax overlap-top" data-speed="1.1">
+          <img src="https://placehold.co/220x180?text=About+4" alt="About placeholder 4">
+        </div>
+        <div class="image-card parallax overlap-far-left" data-speed="0.6">
+          <img src="https://placehold.co/220x180?text=About+5" alt="About placeholder 5">
         </div>
       </div>
     </section>
@@ -167,11 +204,20 @@
             <li>Learning new technologies</li>
           </ul>
         </div>
-        <div class="image-card parallax" data-speed="0.12">
+        <div class="image-card parallax" data-speed="0.45">
           <img src="https://placehold.co/220x180?text=Interest+1" alt="Interest placeholder 1">
         </div>
-        <div class="image-card parallax" data-speed="0.18">
+        <div class="image-card parallax overlap-right" data-speed="0.8">
           <img src="https://placehold.co/220x180?text=Interest+2" alt="Interest placeholder 2">
+        </div>
+        <div class="image-card parallax overlap-left" data-speed="1.0">
+          <img src="https://placehold.co/220x180?text=Interest+3" alt="Interest placeholder 3">
+        </div>
+        <div class="image-card parallax overlap-bottom" data-speed="0.6">
+          <img src="https://placehold.co/220x180?text=Interest+4" alt="Interest placeholder 4">
+        </div>
+        <div class="image-card parallax overlap-far-right" data-speed="1.2">
+          <img src="https://placehold.co/220x180?text=Interest+5" alt="Interest placeholder 5">
         </div>
       </div>
     </section>
@@ -188,11 +234,20 @@
             </li>
           </ul>
         </div>
-        <div class="image-card parallax" data-speed="0.1">
+        <div class="image-card parallax" data-speed="0.4">
           <img src="https://placehold.co/220x180?text=Project+1" alt="Project placeholder 1">
         </div>
-        <div class="image-card parallax" data-speed="0.16">
+        <div class="image-card parallax overlap-left" data-speed="0.7">
           <img src="https://placehold.co/220x180?text=Project+2" alt="Project placeholder 2">
+        </div>
+        <div class="image-card parallax overlap-right" data-speed="1.0">
+          <img src="https://placehold.co/220x180?text=Project+3" alt="Project placeholder 3">
+        </div>
+        <div class="image-card parallax overlap-top" data-speed="1.3">
+          <img src="https://placehold.co/220x180?text=Project+4" alt="Project placeholder 4">
+        </div>
+        <div class="image-card parallax overlap-far-left" data-speed="0.9">
+          <img src="https://placehold.co/220x180?text=Project+5" alt="Project placeholder 5">
         </div>
       </div>
     </section>
@@ -205,11 +260,20 @@
             <a href="#" target="_blank">LinkedIn</a>
           </div>
         </div>
-        <div class="image-card parallax" data-speed="0.09">
+        <div class="image-card parallax" data-speed="0.5">
           <img src="https://placehold.co/220x180?text=Links+1" alt="Links placeholder 1">
         </div>
-        <div class="image-card parallax" data-speed="0.13">
+        <div class="image-card parallax overlap-right" data-speed="0.85">
           <img src="https://placehold.co/220x180?text=Links+2" alt="Links placeholder 2">
+        </div>
+        <div class="image-card parallax overlap-left" data-speed="1.1">
+          <img src="https://placehold.co/220x180?text=Links+3" alt="Links placeholder 3">
+        </div>
+        <div class="image-card parallax overlap-top" data-speed="1.3">
+          <img src="https://placehold.co/220x180?text=Links+4" alt="Links placeholder 4">
+        </div>
+        <div class="image-card parallax overlap-far-right" data-speed="0.7">
+          <img src="https://placehold.co/220x180?text=Links+5" alt="Links placeholder 5">
         </div>
       </div>
     </section>
