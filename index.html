@@ -141,6 +141,28 @@
       margin-right: -100px;
       z-index: 2;
     }
+    /* Additional sizes for image cards */
+    .image-card.small {
+      max-width: 140px;
+      min-height: 100px;
+    }
+    .image-card.small img {
+      height: 100px;
+    }
+    .image-card.medium {
+      max-width: 180px;
+      min-height: 140px;
+    }
+    .image-card.medium img {
+      height: 140px;
+    }
+    .image-card.large {
+      max-width: 280px;
+      min-height: 220px;
+    }
+    .image-card.large img {
+      height: 220px;
+    }
     @media (max-width: 900px) {
       .card-container {
         gap: 1.5rem;
@@ -228,6 +250,12 @@
         <div class="image-card parallax overlap-far-left col-6 col-md-3" data-speed="0.6">
           <img src="https://placehold.co/220x180?text=About+5" alt="About placeholder 5">
         </div>
+        <div class="image-card parallax small overlap-bottom col-4 col-md-2" data-speed="1.4">
+          <img src="https://placehold.co/140x100?text=About+6" alt="About placeholder 6">
+        </div>
+        <div class="image-card parallax medium overlap-right col-4 col-md-2" data-speed="0.8">
+          <img src="https://placehold.co/180x140?text=About+7" alt="About placeholder 7">
+        </div>
       </div>
     </section>
     <section class="parallax-section" id="interests">
@@ -254,6 +282,12 @@
         </div>
         <div class="image-card parallax overlap-far-right col-6 col-md-3" data-speed="1.2">
           <img src="https://placehold.co/220x180?text=Interest+5" alt="Interest placeholder 5">
+        </div>
+        <div class="image-card parallax small overlap-left col-4 col-md-2" data-speed="1.3">
+          <img src="https://placehold.co/140x100?text=Interest+6" alt="Interest placeholder 6">
+        </div>
+        <div class="image-card parallax medium overlap-bottom col-4 col-md-2" data-speed="0.95">
+          <img src="https://placehold.co/180x140?text=Interest+7" alt="Interest placeholder 7">
         </div>
       </div>
     </section>
@@ -285,6 +319,12 @@
         <div class="image-card parallax overlap-far-left col-6 col-md-3" data-speed="0.9">
           <img src="https://placehold.co/220x180?text=Project+5" alt="Project placeholder 5">
         </div>
+        <div class="image-card parallax small overlap-right col-4 col-md-2" data-speed="1.2">
+          <img src="https://placehold.co/140x100?text=Project+6" alt="Project placeholder 6">
+        </div>
+        <div class="image-card parallax medium overlap-top col-4 col-md-2" data-speed="1.05">
+          <img src="https://placehold.co/180x140?text=Project+7" alt="Project placeholder 7">
+        </div>
       </div>
     </section>
     <section class="parallax-section" id="links">
@@ -310,6 +350,12 @@
         </div>
         <div class="image-card parallax overlap-far-right col-6 col-md-3" data-speed="0.7">
           <img src="https://placehold.co/220x180?text=Links+5" alt="Links placeholder 5">
+        </div>
+        <div class="image-card parallax small overlap-bottom col-4 col-md-2" data-speed="1.1">
+          <img src="https://placehold.co/140x100?text=Links+6" alt="Links placeholder 6">
+        </div>
+        <div class="image-card parallax medium overlap-left col-4 col-md-2" data-speed="0.95">
+          <img src="https://placehold.co/180x140?text=Links+7" alt="Links placeholder 7">
         </div>
       </div>
     </section>
@@ -337,5 +383,7 @@
     window.addEventListener('resize', parallaxScroll);
     window.addEventListener('DOMContentLoaded', parallaxScroll);
   </script>
-</body>
+  <footer class="text-center py-4 bg-light" style="font-size: 0.95rem; color: #666;">
+    &copy; 2024 Your Name. All rights reserved.
+  </footer>
 </html>
