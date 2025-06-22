@@ -207,3 +207,48 @@ ul {
 .parallax-section:nth-child(even) {
   background: #e8eaf6;
 }
+/* RTL support */
+body.rtl,
+.text-card.rtl,
+.image-card.rtl {
+  direction: rtl;
+}
+body.rtl header, body.rtl main, body.rtl section, body.rtl .text-card, body.rtl .image-card,
+.text-card.rtl, .image-card.rtl {
+  text-align: right;
+}
+body.rtl .navbar-nav {
+  flex-direction: row-reverse;
+}
+body.rtl .links a {
+  margin-left: 1rem;
+  margin-right: 0;
+}
+body.rtl .card-container {
+  flex-direction: row-reverse;
+}
+body.rtl .image-card.overlap-left,
+.image-card.rtl.overlap-left {
+  margin-left: 0;
+  margin-right: -60px;
+}
+body.rtl .image-card.overlap-right,
+.image-card.rtl.overlap-right {
+  margin-right: 0;
+  margin-left: -60px;
+}
+body.rtl .image-card.overlap-far-left,
+.image-card.rtl.overlap-far-left {
+  margin-left: 0;
+  margin-right: -100px;
+}
+body.rtl .image-card.overlap-far-right,
+.image-card.rtl.overlap-far-right {
+  margin-right: 0;
+  margin-left: -100px;
+}
+@media (max-width: 900px) {
+  body.rtl .card-container {
+    flex-direction: column;
+  }
+}

@@ -204,6 +204,19 @@
     window.addEventListener('scroll', parallaxScroll);
     window.addEventListener('resize', parallaxScroll);
     window.addEventListener('DOMContentLoaded', parallaxScroll);
+
+    // RTL detection and toggle
+    (function() {
+      var rtlLangs = ['ar', 'he', 'fa', 'ur'];
+      var htmlLang = document.documentElement.lang || '';
+      if (rtlLangs.some(function(l) { return htmlLang.startsWith(l); })) {
+        document.body.classList.add('rtl');
+        // Add rtl class to all text-card and image-card elements
+        document.querySelectorAll('.text-card, .image-card').forEach(function(el) {
+          el.classList.add('rtl');
+        });
+      }
+    })();
   </script>
   <footer class="text-center py-4 bg-light" style="font-size: 0.95rem; color: #666;">
     &copy; 2024 Colin Nguyen All rights reserved.
