@@ -212,6 +212,25 @@ body.rtl,
 .text-card.rtl,
 .image-card.rtl {
   direction: rtl;
+  text-align: right;
+}
+body.rtl, body.rtl * {
+  text-align: right !important;
+}
+.text-card.rtl ul, .text-card.rtl ol, .image-card.rtl ul, .image-card.rtl ol {
+  direction: rtl;
+  text-align: right;
+  list-style-position: inside;
+}
+.text-card.rtl ul, .image-card.rtl ul {
+  list-style-type: disc;
+}
+.text-card.rtl ol, .image-card.rtl ol {
+  list-style-type: decimal;
+}
+.text-card.rtl li, .image-card.rtl li {
+  direction: rtl;
+  text-align: right;
 }
 body.rtl header, body.rtl main, body.rtl section, body.rtl .text-card, body.rtl .image-card,
 .text-card.rtl, .image-card.rtl {
