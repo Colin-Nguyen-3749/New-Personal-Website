@@ -177,7 +177,9 @@ ul {
 }
 @media (max-width: 900px) {
   .card-container {
-    gap: 1.5rem;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: stretch;
   }
   .text-card, .image-card {
     max-width: 100%;
@@ -185,14 +187,30 @@ ul {
     margin-right: 0 !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
+    width: 100%;
+  }
+  .image-card img {
+    height: auto;
+    max-height: 180px;
   }
 }
 @media (max-width: 600px) {
   .parallax-section {
-    padding: 2rem 0;
+    padding: 1rem 0;
+  }
+  .card-container {
+    gap: 0.5rem;
   }
   .text-card, .image-card {
-    padding: 1rem;
+    padding: 0.75rem;
+    font-size: 0.98rem;
+  }
+  .image-card img {
+    height: auto;
+    max-height: 120px;
+  }
+  h1, h2 {
+    font-size: 1.3rem;
   }
 }
 /* Parallax effect: will be set by JS */
