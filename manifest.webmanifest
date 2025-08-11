@@ -1,0 +1,15 @@
+{
+  "name": "Colin Nguyen Portfolio",
+  "short_name": "Portfolio",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#222",
+  "theme_color": "#222",
+  "icons": [
+    {
+      "src": "img/CN_icon_512.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
